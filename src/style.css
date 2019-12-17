@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Baskervville|Montserrat&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css");
+
+/* 
+much of this custom stylesheet is adapted from Nick Strayer 
+https://github.com/nstrayer/cv/tree/master/css
+*/
+
+/* Main text is Encode Sans */
+body {
+  font-family: "Montserrat", sans-serif;
+  /*font-weight: 300;
+  line-height: 1.3;
+  color: #444; */
+}
+
+/* Make headers a little wider */
+h1 {
+  font-family: 'Baskervville', serif;
+  /*color: #000;*/
+} 
+
+h2 {
+  font-family: "Baskervville", sans-serif;
+}
+
+h3 {
+  font-family: "Baskervville", sans-serif;
+}
+
+
+
+
+/* link color is solarized violet */
+a:link {
+  color: #545e75; 
+}
+
+.aside {
+  height: 100%;
+}
+
+/* Avoid the breaking within a section */
+.blocks {
+  break-inside: avoid;
+}
+
+/* Laptop icon isn't centered by default which is lame */
+.fa-laptop-code {
+  margin-left: -3px;
+}
+
+/* Override default margins */
+* {
+  --pagedjs-margin-right: 0.2in;
+  --pagedjs-margin-left: 0.2in;
+  --pagedjs-margin-top: 0.5in;
+  --pagedjs-margin-bottom: 0.2in;
+}
+
+/* Customize some of the sizing variables */
+:root {
+  --sidebar-width: 16rem; /* Shrink sidebar width  */
+  --sidebar-background-color: #cecece;  /* Make sidebar solarized */ 
+  --sidebar-horizontal-padding: 0in; /* Reduce sidebar padding */
+  --decorator-border: 1px solid #000000; /* Make timeline solarized violet */
+}
+
+/* adjust list for workshops section in sidebar */
+#workshops li::before {
+    position: relative;
+    margin-left: -4.25pt;
+    content: '• ';
+}
+
+#workshops ul {
+  margin: 0.05in 0.05in 0.15in;
+  padding: 0;
+}
+
+.aside {
+    width: var(--sidebar-width);
+    padding: 0.6in var(--sidebar-horizontal-padding);
+    font-size: 0.8rem;
+    float: right;
+    position: absolute;
+    right: 0px;
+    top: -100px;
+}
+
+.decorator::before {
+    position: absolute;
+    top: var(--decorator-outer-offset-top);
+    left: var(--decorator-outer-offset-left);
+    content: ' ';
+    display: block;
+    width: var(--decorator-outer-dim);
+    height: var(--decorator-outer-dim);
+    border-radius: calc(var(--decorator-outer-dim) / 2);
+    background-color: 
+    #000;
+}
+
+.decorator::after {
+    position: absolute;
+    top: calc(var(--decorator-outer-offset-top) + var(--decorator-border-width));
+    left: calc(var(--decorator-outer-offset-left) + var(--decorator-border-width));
+    content: ' ';
+    display: block ruby;
+    width: 7px;
+    height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
+    border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);
+    background-color: #cecece;
+}
+
+
+[data-id="main"] {
+    width: var(--main-width);
+    padding: 0 0.25in 0 0.1in;
+    font-size: 0.7rem;
+    float: left;
+}
+
+
+[data-id="disclaimer"] {
+    position: absolute;
+    bottom: -111px;
+    right: var(--sidebar-horizontal-padding);
+    font-size: 0.75rem;
+    font-style: italic;
+    line-height: 1.1;
+    text-align: right;
+    color: 
+    #777;
+}
