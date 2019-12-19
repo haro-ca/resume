@@ -1,0 +1,119 @@
+---
+title: "Carlos A. Haro"
+author: Carlos A. Haro
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: true
+    css: ['style.css', 'resume']
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r Chunk options, echo=FALSE}
+knitr::opts_chunk$set(warning = F, message = F, echo = FALSE, results = 'asis')
+```
+
+```{r Init}
+options(tidyverse.quiet = TRUE)
+library(tidyverse)
+source(here::here('src', 'resume', 'print_functions.R'))
+```
+
+
+Aside
+================================================================================
+
+```{r Logo}
+knitr::include_graphics(here::here('logo', 'ch.png'))
+
+```
+
+
+
+Contact Info {#contact}
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-envelope"></i> haro_ca@outlook.com
+- <i class="fa fa-twitter"></i> @haro_ca_
+- <i class="fa fa-github"></i> github.com/haro-ca
+- <i class="fa fa-phone"></i> (+52) 55-49-85-53-34
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+
+**Programming:** R, Python, SQL
+
+**Data Science:** Statistical modelling and data vizualization. Main experience with frequentist methods, but with high interest to develop in bayesian's.
+
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+This resume was made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
+
+Last updated on `r Sys.Date()`.
+
+
+
+Main
+================================================================================
+
+Carlos A. Haro {#title}
+--------------------------------------------------------------------------------
+
+### Data scientist with experience in economic analysis 
+
+Main focus on data visualization and supervised learning. 
+
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+### (ITAM) Instituto Tecnológico Autónomo de México
+
+B.S., Economics
+
+Mexico City, Mexico
+
+2014 - 2018
+ 
+Experience {data-icon=laptop-code} 
+--------------------------------------------------------------------------------
+
+```{r Experience}
+positions_frame <- read_tsv(here::here('positions_data', 'experience.csv'), 
+                            col_types = cols())
+print_position(positions_frame, 'Sr. Data Scientist')
+print_position(positions_frame, 'Jr. Data Scientist | Economic Analyst')
+```
+
+Miscellaneous {data-icon=file}
+--------------------------------------------------------------------------------
+
+### Hackaton challenge winner
+
+Annual BBVA Hackaton Challenge 
+
+N/A
+
+2019
+
+**Organizer**: BBVA Bank  
+**Challenge**: Update and insert operation of a 50 million observations dataset in under 10 minutes.  
+**Result**: 95%+ accuracy of update and insert achieved in 4 minutes | *Pyspark on AWS for the algorithm, RMarkdown for the report*  
+
+### Hackaton participant
+
+Annual Banamex Hackaton Challenge 
+
+N/A
+
+2019
+
+**Organizer**: Banamex Bank  
+**Challenge**: Create any platform for aiding small mexican businesses (< 75,000 usd/year cash flow) flourish.  
+**Result**: Created a live dashboard service that calculated the probability of succes of a business given initial investment, number of employees, employee salary, etc. | *R (shiny), Python (scikit-learn), AWS*
+
+ 
+

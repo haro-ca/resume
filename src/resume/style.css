@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Baskervville|Montserrat&display=swap');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css");
+
+
+ 
+/* 
+This custom stylesheet is built over Connor Gilroy's one, 
+which in turn is adapted from Nick Strayer.
+
+https://github.com/ccgilroy/resume/tree/master/css
+https://github.com/nstrayer/cv/tree/master/css
+*/
+
+/* Main text is Montserrat */
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Headers are Baskervville */
+h1, h2, h3 {
+  font-family: 'Baskervville', serif;
+  /*color: #000;*/
+} 
+
+
+/* link color to blue */
+a:link {
+  color: #545e75; 
+}
+
+/* Avoid the breaking within a section */
+.blocks {
+  break-inside: avoid;
+}
+
+/* Laptop icon isn't centered by default */
+.fa-laptop-code {
+  margin-left: -3px;
+}
+
+
+/* Override default margins */
+* {
+  --pagedjs-margin-right: 0.2in;
+  --pagedjs-margin-left: 0.2in;
+  --pagedjs-margin-top: 0.5in;
+  --pagedjs-margin-bottom: 0.2in;
+}
+
+/* Sizing variables of sidebar */
+:root {
+  --sidebar-width: 16rem; /* Shrink sidebar width  */
+  --sidebar-background-color: #cecece;  /* Make sidebar personalized grey */ 
+  --sidebar-horizontal-padding: 0in; /* Reduce sidebar padding */
+  --decorator-border: 1px solid #000000; /* Make timeline lines black */
+}
+
+/* adjust list for workshops section in sidebar */
+#workshops li::before {
+    position: relative;
+    margin-left: -4.25pt;
+    content: '• ';
+}
+
+
+#workshops ul {
+  margin: 0.05in 0.05in 0.15in;
+  padding: 0;
+}
+
+/* Sidebar content starts too low on the page */
+.aside {
+    /*width: var(--sidebar-width);
+    padding: 0.6in var(--sidebar-horizontal-padding);
+    font-size: 0.8rem;
+    float: right;
+    position: absolute;
+    right: 0px;*/
+    top: -100px;
+}
+
+/* Adds the encircling of the bullets in the timeline */
+.decorator::before {
+    /*position: absolute;
+    top: var(--decorator-outer-offset-top);
+    left: var(--decorator-outer-offset-left);
+    content: ' ';
+    display: block;
+    width: var(--decorator-outer-dim);
+    height: var(--decorator-outer-dim);
+    border-radius: calc(var(--decorator-outer-dim) / 2);*/
+    background-color: #000;
+}
+
+/* Changes color of the bullet in timeline */
+.decorator::after {
+    /*position: absolute;
+    top: calc(var(--decorator-outer-offset-top) + var(--decorator-border-width));
+    left: calc(var(--decorator-outer-offset-left) + var(--decorator-border-width));
+    content: ' ';
+    display: block ruby;
+    width: 7px;
+    height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
+    border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);*/
+    background-color: #cecece;
+}
+
+/* There's too much blank space on the left of the main body, this reduces it */
+[data-id="main"] {
+    /*width: var(--main-width);
+    
+    font-size: 0.7rem;
+    float: left;*/
+    padding: 0 0.25in 0 0.1in;
+}
+
+/* In changing the sidebar content start, disclaimer still appears in the middle, 
+this changes the justification*/
+[data-id="disclaimer"] {
+    /*position: absolute;
+    
+    right: var(--sidebar-horizontal-padding);
+    font-size: 0.75rem;
+    font-style: italic;
+    line-height: 1.1;
+    text-align: right;
+    color: 
+    #777;*/
+    bottom: -220px;
+}
