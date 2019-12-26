@@ -3,8 +3,9 @@ options(tidyverse.quiet = TRUE)
 library(tidyverse)
 
 # Experience ====
-# Frame build ----
-# Basic layout ----
+# ├─ Positions tibble build ----
+# │ ├─ Positions description ----
+# │ │ ├─ Basic layout ----
 # position_var <- tibble(
 #   position = '', 
 #   institucion = "", 
@@ -27,7 +28,7 @@ library(tidyverse)
 #   )
 # )
 
-# Sr. Data Scientist ----
+# │ │ ├─ Sr. Data Scientist ----
 sr_ds <- tibble(
     position = 'Sr. Data Scientist', 
     institucion = "Mexico's Central Tax Administration Office  
@@ -55,7 +56,7 @@ sr_ds <- tibble(
     )
 )
 
-# Jr. Data Scientist ----
+# └ │ ├─ Jr. Data Scientist ----
 jr_ds <-  tibble(
     position = 'Jr. Data Scientist | Economic Analyst', 
     institucion = "EnergeA (Energy Sector Consulting Firm)", 
@@ -78,11 +79,14 @@ jr_ds <-  tibble(
     )
 )
 
-# Collapses all the positions above ----
+# ├─ Markdown preparation ----
+# │ ├─ Positions collapse ----
+# Collapses all the positions above into a single frame.
 # The environment needs to have only the positions, else, the row bind may not work.
 positions_frame <- map(ls(), ~ eval(sym(.x))) %>% bind_rows()
 
-# Frame cleaning ----
+# └ ├─ Cleaning ----
+# Adds details to the strings for printing as Markdown, ** for italics, line breaks, etc.
 positions_frame <- positions_frame %>% 
     # Adds the encircling "* *" for the skills lists
     mutate(desc = map(desc, ~.x %>% mutate(skills = str_c('*', skills, '*')))) %>% 
@@ -93,12 +97,10 @@ positions_frame <- positions_frame %>%
     # Adds the line break at the end.
     mutate(desc = map_chr(desc, ~ str_c(.x, collapse = '\n')))
 
-# Output ----
+# Output ====
+# Writes out the ready-for-markdown-print frame on a csv
 write_tsv(positions_frame, here::here('positions_data', 'experience.csv'))
 
-glue::glue('Done.
-           \n')
-  
 
 
 
