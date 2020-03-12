@@ -27,6 +27,10 @@ h1, h2, h3 {
 a:link {
   color: #545e75; 
 }
+a {
+    text-decoration: none;
+    color: #545e75;
+}
 
 /* Avoid the breaking within a section */
 .blocks {
@@ -79,6 +83,11 @@ a:link {
     top: -100px;
 }
 
+.fa-file:before {
+    margin-left: 1px;
+}
+
+
 /* Adds the encircling of the bullets in the timeline */
 .decorator::before {
     /*position: absolute;
@@ -90,6 +99,7 @@ a:link {
     height: var(--decorator-outer-dim);
     border-radius: calc(var(--decorator-outer-dim) / 2);*/
     background-color: #000;
+    margin-left: 1px;
 }
 
 /* Changes color of the bullet in timeline */
@@ -103,6 +113,7 @@ a:link {
     height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
     border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);*/
     background-color: #cecece;
+    margin-left: 1px;
 }
 
 /* There's too much blank space on the left of the main body, this reduces it */
