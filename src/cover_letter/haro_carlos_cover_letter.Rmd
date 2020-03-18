@@ -1,0 +1,135 @@
+---
+title: "Carlos A. Haro"
+author: Carlos A. Haro
+date: "`r Sys.Date()`"
+output:
+  pagedown::html_resume:
+    # set it to true for a self-contained HTML page but it'll take longer to render
+    self_contained: TRUE
+    css: ['style.css', 'resume']
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r Chunk options, echo=FALSE}
+knitr::opts_chunk$set(warning = F, message = F, echo = FALSE, results = 'asis')
+```
+
+```{r Init}
+options(tidyverse.quiet = TRUE)
+library(tidyverse)
+source(here::here('src', 'resume', 'print_functions.R'))
+```
+
+
+Aside
+================================================================================
+
+```{r Logo}
+knitr::include_graphics(here::here('logo', 'ch.png'))
+```
+
+
+
+Contact Info {#contact}
+--------------------------------------------------------------------------------
+
+- <i class="fa fa-envelope"></i> haro_ca@outlook.com
+- <i class="fa fa-twitter"></i> @[haro_ca_](https://twitter.com/haro_ca_)
+- <i class="fa fa-github"></i> [haro-ca](https://github.com/haro-ca)
+- <i class="fa fa-phone"></i> (+52) 55-49-85-53-34
+
+Skills {#skills}
+--------------------------------------------------------------------------------
+
+**Programming:** R, Python, SQL
+
+**Data Science:** Statistical modelling and data vizualization. Main experience with frequentist methods, but with high interest to develop in bayesian's.
+
+
+Disclaimer {#disclaimer}
+--------------------------------------------------------------------------------
+
+This cover letter was made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
+
+Last updated on `r Sys.Date()`.
+
+
+
+Main
+================================================================================
+
+Carlos A. Haro {#title}
+--------------------------------------------------------------------------------
+
+### Data scientist with experience in economic analysis <br>  Currently searching for a data science position.
+
+Main focus on visualization and data pipelines for production delivery. <br><br>
+
+### *Who am I?*
+A data scientist and an economist fascinated by how
+data science projects add value to an industry/organization.<br>
+My answer, so far, is: by creating products and services that simplify, efficiently process, and
+clearly communicate complex data.<br>
+**Simplification**: In my experience, this isn't necessarily done by means of a model
+(in fact, in my current organization, the answer rarely is a model);
+a visualization, or a well written API can be just as effective.<br>
+**Efficiency**: An efficient data solution is one that solves the problem with the least amount 
+of resources, in this (...)
+Example: a pipeline that starts at the DB Storage,
+iterates through feature design and proper visualization,
+proceeds the model training, and deploys into a containerized service with a RESTful API;
+all of this, linked through multiple triggers.
+(This can be further expanded: proper logging, unit testing, CI/CD, and much more.)
+I find simplication a common task among data scientists/analysts; efficiency, on the other hand,
+is something I've seen most frequent in engineers (ML engineers, DevOps).<br>
+My interest lies in this intersection, and I'm looking for a role that allows me to
+develop both of them.
+
+### *Experience and skillset*
+<div class='pull-left'>
+[*Outliers*](https://en.wikipedia.org/wiki/Outliers_(book)),
+a book by [Malcolm Gladwell](https://en.wikipedia.org/wiki/Malcolm_Gladwell), states that 
+mastery over a skill can only be achieved by 10,000 hours of productive work.
+While there is both evidence in favor and against this theory, I do find it a good proxy for
+maturity of a skillset. The chart intents to summarize my current progress.
+</div>
+
+<div class='pull-right'>
+```{r, echo=FALSE} 
+library(tidyverse)
+library(extrafont)
+tribble(~R, ~Python, ~SQL, ~Makefiles, ~Docker,
+         3000,  300, 200, 100, 60) %>% 
+  pivot_longer(cols = everything(), names_to = 'language', values_to = 'hours') %>% 
+  mutate(str_hours = if_else(str_length(hours) >= 4, 
+                             str_c(str_sub(hours, end = 1L), 'K'), 
+                             as.character(hours))) %>% 
+  arrange(hours) %>% 
+  mutate(hours = if_else(language == 'R', 500, hours),
+         language = forcats::fct_inorder(language)) %>% 
+  ggplot() +
+  aes(x = language, y = hours, label = str_hours) +
+  geom_col(width = 0.1, color = 'black', fill = 'black') +
+  geom_point(color = 'black', fill = '#cecece', shape = 21, size = 20, stroke = 2) + 
+  geom_text(color = 'black', size = 7) +
+  geom_abline(aes(intercept = 380, slope = 5), size = 3, color = 'white') +
+  geom_abline(aes(intercept = 400, slope = 5), size = 3, color = 'white') +
+  scale_y_continuous(limits = seq(0, 520, by = 520)) +
+  labs(x = '', y = '', title = '') +
+  theme_classic() +
+  theme(axis.line.x = element_blank(), 
+        axis.text.x = element_blank(), 
+        axis.ticks.x = element_blank(), 
+        title = element_text(size = 20, family = 'Serif'),
+        axis.text.y = element_text(size = 20, family = 'Serif')) +
+  coord_flip()
+```
+</div>
+
+
+
+
+
+ 
+
