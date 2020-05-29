@@ -41,10 +41,86 @@ Contact Info {#contact}
 
 Skills {#skills}
 --------------------------------------------------------------------------------
+[*Outliers*](https://en.wikipedia.org/wiki/Outliers_(book)),
+a book by [Malcolm Gladwell](https://en.wikipedia.org/wiki/Malcolm_Gladwell), states that 
+mastery over a skill can only be achieved by 10,000 hours of productive work.
+While there is both evidence in favor and against this theory, I do find it a good proxy for
+maturity of a skillset. The charts below attempt to summarize my current progress.<br>
 
-**Programming:** R, Python, SQL
+**Programming**<br><br>
+```{r, echo=FALSE} 
+library(tidyverse)
+library(extrafont)
+tribble(~R, ~Python, ~SQL, ~Makefiles, ~Docker, ~Cloud, 
+         3000,  300, 250, 100, 60, 150) %>% 
+  pivot_longer(cols = everything(), names_to = 'language', values_to = 'hours') %>% 
+  mutate(str_hours = if_else(str_length(hours) >= 4, 
+                             str_c(str_sub(hours, end = 1L), 'K'), 
+                             as.character(hours))) %>% 
+  arrange(hours) %>% 
+  mutate(hours = if_else(language == 'R', 500, hours),
+         language = forcats::fct_inorder(language)) %>% 
+  ggplot() +
+  aes(x = language, y = hours, label = str_hours) +
+  geom_col(width = 0.04, color = 'black', fill = 'black') +
+  geom_point(color = 'black', fill = '#cecece', shape = 21, size = 20, stroke = 2) + 
+  geom_text(color = 'black', size = 7) +
+  geom_abline(aes(intercept = 380, slope = 5), size = 3, color = '#cecece') +
+  geom_abline(aes(intercept = 400, slope = 5), size = 3, color = '#cecece') +
+  scale_y_continuous(limits = seq(0, 520, by = 520)) +
+  #scale_x_discrete(expand = expansion(mult = c(0, 0))) +
+  labs(x = '', y = '', title = 'Hours of productive work') +
+  theme_classic() +
+  theme(axis.line.x = element_blank(), 
+        axis.text.x = element_blank(), 
+        axis.ticks.x = element_blank(), 
+        title = element_text(size = 20, family = 'Georgia'),
+        axis.text.y = element_text(size = 20, family = 'Georgia'),
+        plot.background = element_rect(fill = '#cecece', color = '#cecece'), 
+        panel.background = element_rect(fill = '#cecece', color = '#cecece')) +
+  coord_flip()
+```
 
-**Data Science:** Statistical modelling and data vizualization. Main experience with frequentist methods, but with high interest to develop in bayesian's.
+
+**Statistics**<br>
+```{r, echo=FALSE, fig.width=10, fig.height=3} 
+library(tidyverse)
+library(extrafont)
+tribble(~Frequentist, ~Bayesian,
+         1200,  100) %>% 
+  pivot_longer(cols = everything(), names_to = 'language', values_to = 'hours') %>% 
+  mutate(str_hours = if_else(str_length(hours) >= 4, 
+                             str_c(str_sub(hours, end = 1L), 'K'), 
+                             as.character(hours))) %>% 
+  arrange(hours) %>% 
+  mutate(hours = if_else(language == 'Frequentist', 300, hours),
+         language = forcats::fct_inorder(language)) %>% 
+  ggplot() +
+  aes(x = language, y = hours, label = str_hours) +
+  geom_col(width = 0.06, color = 'black', fill = 'black') +
+  geom_point(color = 'black', fill = '#cecece', shape = 21, size = 28, stroke = 2.75) + 
+  geom_text(color = 'black', size = 10) +
+  geom_abline(aes(intercept = 230, slope = 5), size = 3, color = '#cecece') +
+  geom_abline(aes(intercept = 215, slope = 5), size = 3, color = '#cecece') +
+  scale_y_continuous(limits = seq(0, 520, by = 520)) +
+  labs(x = '', y = '', title = '') +
+  theme_classic() +
+  theme(axis.line.x = element_blank(), 
+       axis.text.x = element_blank(), 
+        axis.ticks.x = element_blank(), 
+        title = element_text(size = 20, family = 'Georgia'),
+        axis.line.y = element_line(size = 0.7), 
+        axis.text.y = element_text(size = 28.5, family = 'Georgia'),
+        plot.background = element_rect(fill = '#cecece', color = '#cecece'), 
+        panel.background = element_rect(fill = '#cecece', color = '#cecece')) +
+  coord_flip()
+```
+
+Main experience with frequentist methods, but with high interest to develop in bayesian's.
+
+**Miscellaneus**<br>
+Vim enthusiast, in the Terminal, in VS Code, in RStudio, in Chrome (with Vimium), even in the whole OS (with Karabiner)!  
+Chess fanatic [(chess.com profile)](https://www.chess.com/member/mendel17)
 
 
 Disclaimer {#disclaimer}
@@ -62,11 +138,8 @@ Main
 Carlos A. Haro {#title}
 --------------------------------------------------------------------------------
 
-### Data scientist with experience in economic analysis <br>  Currently searching for a data science position.
+### Data scientist with experience in scalable data products.<br><br>Currently searching for a Mid-Level Data Science position, but with interest in a Jr. ML Engineering role.
 
-Main focus on visualization and data pipelines for production delivery.
-
- 
 Experience {data-icon=laptop-code} 
 --------------------------------------------------------------------------------
 
@@ -79,9 +152,18 @@ print_position(positions_frame, 'Jr. Data Scientist | Economic Analyst')
 
 Miscellaneous {data-icon=file}
 --------------------------------------------------------------------------------
+### Podcast host
+
+Currently a host in "Cuestion de datos", a weekly data related podcast. [(Spotify link)](https://open.spotify.com/show/3zmhwFMBgjmBStwwk4V7TY?si=kj69DOc0S9ii_Haxfba3QQ)
+
+N/A
+
+2020
+
+
 ### Teaching
 
-Currently teaching a data analysis course  
+Currently teaching a data analysis course (*pro bono*)
 
 N/A
 
@@ -92,7 +174,8 @@ techniques for data analysis.
 **Syllabus**: [(Download link)](https://github.com/haro-ca/herramientas_de_analisis_de_datos/raw/master/00_temario/temario.pdf)  
 **Software**: R, Python, PostgreSQL  
 **Institution**: ITAM [(webpage)](https://www.itam.mx/)  
-**Language**: Spanish
+**Language**: Spanish  
+**Amid COVID course videos**: [(YouTube link)](https://www.youtube.com/channel/UClMCc-ACtQ9gJ5BRlHZkTKQ)
 
 ### Hackaton challenge winner
 

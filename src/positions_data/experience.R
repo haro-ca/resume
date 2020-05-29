@@ -42,15 +42,13 @@ sr_ds <- tibble(
                 "- Development and deployment of a supervised model for classifying tax debt",
                 "- Designed and taught three courses for the institution's staff training: introduction to R, basics of exploratory data analysis, building data science pipelines using Makefiles",
                 "- Designed a pipeline for automatic generation of frequent data visualization reports",
-                "- Perform network analysis to detect tax evasion communities",
-                "- Version control of cloropleth maps for the geographical display of taxpayer's data"
+                "- Perform network analysis to detect tax evasion communities"
             ), 
             skills = c(
                 "R (tidyverse, ranger), Python (scikit-learn, pandas), SQL",
                 "R (tidyverse, ggplot2), GNU Make",
                 "R Markdown (ggplot2, shiny)",
-                "R (tidyverse, visnetwork, ggraph)",
-                "R (leaflet QGis)"
+                "R (tidyverse, visnetwork, ggraph)"
             )
         )
     )
@@ -67,11 +65,9 @@ jr_ds <-  tibble(
         tibble(
             description = c(
                 "- Developed a statistical model for identifying anti-competitive practices between the mid-stream natural gas providers",
-                "- Neighboring gas station's competition analysis for identifying price setting mechanisms.",
                 "- Built a PDF scrapping pipeline of 100+ files for ownership analysis of Mexico's natural gas industry."
             ), 
             skills = c(
-                "R",
                 "R",
                 "R (stringr, selenium)"
             )

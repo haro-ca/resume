@@ -1,10 +1,8 @@
 position	institucion	location	start	end	desc	date
 Jr. Data Scientist | Economic Analyst	EnergeA (Energy Sector Consulting Firm)	Mexico City	2018	NA	"- Developed a statistical model for identifying anti-competitive practices between the mid-stream natural gas providers | *R*
-- Neighboring gas station's competition analysis for identifying price setting mechanisms. | *R*
 - Built a PDF scrapping pipeline of 100+ files for ownership analysis of Mexico's natural gas industry. | *R (stringr, selenium)*"	2018
 Sr. Data Scientist	"Mexico's Central Tax Administration Office  
     (Servicio de Administración Tributaria)"	Mexico City	Jan. 2019	present	"- Development and deployment of a supervised model for classifying tax debt | *R (tidyverse, ranger), Python (scikit-learn, pandas), SQL*
 - Designed and taught three courses for the institution's staff training: introduction to R, basics of exploratory data analysis, building data science pipelines using Makefiles | *R (tidyverse, ggplot2), GNU Make*
 - Designed a pipeline for automatic generation of frequent data visualization reports | *R Markdown (ggplot2, shiny)*
-- Perform network analysis to detect tax evasion communities | *R (tidyverse, visnetwork, ggraph)*
-- Version control of cloropleth maps for the geographical display of taxpayer's data | *R (leaflet QGis)*"	Jan. 2019 - present
+- Perform network analysis to detect tax evasion communities | *R (tidyverse, visnetwork, ggraph)*"	Jan. 2019 - present

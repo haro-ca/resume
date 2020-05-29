@@ -11,8 +11,8 @@ bg_color <- "#cecece"
 
 # └─ Color palette ----
 blue <- '#545e75'
-green <- '#3f826d'
 red <- '#a31000'
+green <- '#3f826d'
 skin <- '#f2a746'
 grey <- '#adadad'
 yellow <- '#ddd26a'

@@ -11,6 +11,11 @@ https://github.com/ccgilroy/resume/tree/master/css
 https://github.com/nstrayer/cv/tree/master/css
 */
 
+.main-block {
+    margin-top: 0.0in;
+}
+
+
 /* Main text is Montserrat */
 body {
   font-family: "Montserrat", sans-serif;
@@ -22,7 +27,13 @@ h1, h2, h3 {
   /*color: #000;*/
 } 
 
-
+p {
+    text-align: justify;
+    font-size: 0.7rem;
+}
+.details {
+    text-align: justify;
+}
 /* link color to blue */
 a:link {
   color: #545e75; 
@@ -99,7 +110,7 @@ a {
     height: var(--decorator-outer-dim);
     border-radius: calc(var(--decorator-outer-dim) / 2);*/
     background-color: #000;
-    margin-left: 1px;
+    margin-left: 0.4px;
 }
 
 /* Changes color of the bullet in timeline */
@@ -113,7 +124,7 @@ a {
     height: calc(var(--decorator-outer-dim) - (var(--decorator-border-width) * 2));
     border-radius: calc((var(--decorator-outer-dim) - (var(--decorator-border-width) * 2)) / 2);*/
     background-color: #cecece;
-    margin-left: 1px;
+    margin-left: 0.4px;
 }
 
 /* There's too much blank space on the left of the main body, this reduces it */
@@ -137,5 +148,11 @@ this changes the justification*/
     text-align: right;
     color: 
     #777;*/
-    bottom: -220px;
+    bottom: -242px;
+}
+#contact.section.level2 {
+  margin-top: 0px;
+}
+#skills.section.level2 {
+  margin-top: 0px;
 }
