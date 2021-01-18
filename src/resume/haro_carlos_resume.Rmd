@@ -36,10 +36,10 @@ knitr::include_graphics(here::here('logo', 'ch.png'))
 
 ## Skills {#skills}
 
-[*Outliers*](https://en.wikipedia.org/wiki/Outliers_(book)), a book by [Malcolm Gladwell](https://en.wikipedia.org/wiki/Malcolm_Gladwell), states that mastery over a skill can only be achieved by 10,000 hours of productive work. While there is both evidence in favor and against this theory, I do find it a good proxy for maturity of a skillset. The charts below attempt to summarize my current progress.<br>
+[*Outliers*](https://en.wikipedia.org/wiki/Outliers_(book)), by [Malcolm Gladwell](https://en.wikipedia.org/wiki/Malcolm_Gladwell), states that mastery over a skill can only be achieved by 10,000 hours of productive work. I find it a good proxy for maturity of a skillset, so I summarize my current state in the charts below:<br>
 
-**Programming**<br>
-```{r}
+**Programming (hours of work)**<br>
+```{r, background="transparent"}
 knitr::include_graphics(here::here('logo', 'gladwell.png'))
 ```
 
@@ -50,12 +50,17 @@ knitr::include_graphics(here::here('logo', 'gladwell_statistics.png'))
 
 Main experience with frequentist methods, but with high interest to develop in bayesian's.
 
-**Miscellaneus**<br> Vim enthusiast, in the Terminal, in VS Code, in RStudio, in Chrome (with Vimium), even in the whole OS (with Karabiner)!\
-Chess fanatic [(chess.com profile)](https://www.chess.com/member/mendel17)
+**Fun facts**<br> Vim enthusiast; in the terminal, in VScode, in RStudio, in Chrome (with Vimium), even in the whole OS! (with Karabiner)\
+Chess fanatic [(chess.com profile)](https://www.chess.com/member/mendel17)  
+Salsa dancer (though not while COVID)
 
 ## Disclaimer {#disclaimer}
 
-This resume was made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
+This resume was made entirely with R.<br>
+Raw format with [**pagedown**](https://github.com/rstudio/pagedown), 
+logo with [**ggraph**](https://github.com/thomasp85/ggraph).<br>
+The source code is available 
+at my [personal repo](https://github.com/haro-ca/resume) and, obviously, it can be used freely.
 
 Last updated on `r Sys.Date()`.
 
@@ -63,7 +68,11 @@ Last updated on `r Sys.Date()`.
 
 ## Carlos A. Haro {#title}
 
-### Data scientist with experience in scalable data products.<br><br>
+<h3>
+Data scientist with experience in reproducible pipelines for data products. 
+Specialized in visualizations, but with knowledge of cloud and on-premise data engineering practices.  
+</h3>
+
 ## Experience {data-icon="laptop"}
 
 ```{r Experience}
@@ -75,6 +84,14 @@ print_position(positions_frame, 'Jr. Data Scientist | Economic Analyst')
 
 ## Miscellaneous {data-icon="file"}
 
+### Cloud certifications
+
+Microsoft certified in Azure fundamentals [(certification badge)](https://www.youracclaim.com/badges/d7f28f4e-d110-43c5-90a1-bb1093cd52b4/linked_in_profile)
+
+N/A
+
+2020
+
 ### Podcast host
 
 Cofounder and host in "Cuestion de datos", a data related podcast. [(Spotify link)](https://open.spotify.com/show/3zmhwFMBgjmBStwwk4V7TY?si=kj69DOc0S9ii_Haxfba3QQ)
@@ -83,32 +100,31 @@ N/A
 
 2020
 
-### Teaching
+### Undergraduate teaching
 
-Currently teaching a data analysis course (*pro bono*)
+Taught 3 undergraduate courses (*pro bono*)  
+The **objective** was to teach political science, management, and economics students about 
+reproducible workflows associated with modern computational techniques for data analysis and modelling.
+Taught in **spanish** for **[ITAM](https://www.itam.mx/) students**; software included **R, python, SQL, and git** through 
+**RStudio, VScode, jupyter, and the terminal**.  
+**Course videos, syllabus and materials**: [(1st - youtube link)](https://www.youtube.com/channel/UClMCc-ACtQ9gJ5BRlHZkTKQ), ([(2nd - dropbox link)](https://www.dropbox.com/sh/gt5qdrb1z6rcoor/AADyqIoA9HmQBgT7Rn5oAMjZa?dl=0),
+[(3rd - dropbox link)](https://www.dropbox.com/sh/61ibvptjrc9spo2/AAAYHZ4r4sVS98BT9Rwp6h9Ra?dl=0)
 
 N/A
 
 2020
 
-**Objective**: To teach political science, management, and economics students about modern computational techniques for data analysis.\
-**Syllabus**: [(Download link)](https://github.com/haro-ca/herramientas_de_analisis_de_datos/raw/master/00_temario/temario.pdf)\
-**Software**: R, Python, PostgreSQL\
-**Institution**: ITAM [(webpage)](https://www.itam.mx/)\
-**Language**: Spanish\
-**Amid COVID course videos**: [(YouTube link)](https://www.youtube.com/channel/UClMCc-ACtQ9gJ5BRlHZkTKQ)
 
-### Hackaton challenge winner
+### Graduate teaching
 
-Annual BBVA Hackaton Challenge
+Taught one course to economics master's degree students
 
 N/A
 
-2019
+2020
 
-**Organizer**: BBVA Bank\
-**Challenge**: Update and insert operation of a 50 million observations dataset in under 10 minutes.\
-**Result**: 95%+ accuracy of update and insert achieved in 4 minutes \| *Pyspark on AWS for the algorithm, RMarkdown for the report*
+Content was similar to the undergraduate one, however, special emphasis was made into developing a toolbox for reproducible academic research.  
+**Course videos, syllabus and materials**: [(Dropbox link)](https://www.dropbox.com/sh/ax00fl4bmtrniqo/AAANAdsx9rw80TamsjZRHbRwa?dl=0)
 
 ## Education {data-icon="graduation-cap" data-concise="true"}
 

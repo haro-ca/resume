@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Baskervville|Montserrat&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css");
 
-
  
 /* 
 This custom stylesheet is built over Connor Gilroy's one, 
@@ -14,7 +13,6 @@ https://github.com/nstrayer/cv/tree/master/css
 .main-block {
     margin-top: 0.0in;
 }
-
 
 /* Main text is Montserrat */
 body {
@@ -58,7 +56,7 @@ a {
 * {
   --pagedjs-margin-right: 0.2in;
   --pagedjs-margin-left: 0.2in;
-  --pagedjs-margin-top: 0.5in;
+  --pagedjs-margin-top: 0.3in;
   --pagedjs-margin-bottom: 0.2in;
 }
 
@@ -133,7 +131,7 @@ a {
     
     font-size: 0.7rem;
     float: left;*/
-    padding: 0 0.25in 0 0.1in;
+    padding: 0 0.1in 0 0in;
 }
 
 /* In changing the sidebar content start, disclaimer still appears in the middle, 
@@ -148,7 +146,7 @@ this changes the justification*/
     text-align: right;
     color: 
     #777;*/
-    bottom: -242px;
+    bottom: -259px;
 }
 #contact.section.level2 {
   margin-top: 0px;

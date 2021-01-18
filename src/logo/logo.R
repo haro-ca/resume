@@ -159,41 +159,43 @@ letter_h <- ggraph(layout) +
     theme(plot.background = element_rect(fill = bg_color), 
           legend.position = 'none')
 
-tribble(~R, ~Python, ~SQL, ~Makefiles, ~Docker, ~Cloud, 
-        3000,  300, 250, 100, 60, 150) %>% 
-    pivot_longer(cols = everything(), names_to = 'language', values_to = 'hours') %>% 
-    mutate(str_hours = if_else(str_length(hours) >= 4, 
-                               str_c(str_sub(hours, end = 1L), 'K'), 
-                               as.character(hours))) %>% 
-    arrange(hours) %>% 
-    mutate(hours = if_else(language == 'R', 500, hours),
-           language = forcats::fct_inorder(language)) %>% 
-    ggplot() +
-    aes(x = language, y = hours, label = str_hours) +
-    geom_col(width = 0.04, color = 'black', fill = 'black') +
-    geom_point(color = 'black', fill = '#cecece', shape = 21, size = 20, stroke = 2) + 
-    geom_text(color = 'black', size = 7) +
-    geom_abline(aes(intercept = 380, slope = 5), size = 3, color = 'transparent') +
-    geom_abline(aes(intercept = 400, slope = 5), size = 3, color = 'transparent') +
-    scale_y_continuous(limits = seq(0, 520, by = 520)) +
-    #scale_x_discrete(expand = expansion(mult = c(0, 0))) +
-    labs(x = '', y = '', title = 'Hours of productive work') +
-    theme_classic() +
-    theme(axis.line.x = element_blank(), 
-          axis.text.x = element_blank(), 
-          axis.ticks.x = element_blank(), 
-          title = element_text(size = 20, family = 'Georgia'),
-          axis.text.y = element_text(size = 20, family = 'Georgia'),
-          plot.background = element_rect(fill = 'transparent', color = 'transparent'), 
-          panel.background = element_rect(fill = 'transparent', color = 'transparent')) +
-    coord_flip() + 
+library(extrafont)
+extrafont::font_import("Montserrat")
+library(showtext)
+font_add_google("Montserrat", "montserrat")
+tribble(~R, ~Python, ~Cloud, ~SQL, ~Docker, ~Make,
+         3000,  300, 250, 100, 100, 60) %>%
+  pivot_longer(cols = everything(), names_to = 'language', values_to = 'hours') %>%
+  mutate(str_hours = if_else(str_length(hours) >= 4,
+                             str_c(str_sub(hours, end = 1L), 'K'),
+                             as.character(hours))) %>%
+  arrange(hours) %>%
+  mutate(hours = if_else(language == 'R', 500, hours),
+         language = forcats::fct_inorder(language)) %>%
+  ggplot() +
+  aes(x = language, y = hours, label = str_hours) +
+  geom_col(width = 0.1, color = 'black', fill = 'black') +
+  geom_point(color = 'black', fill = '#cecece', shape = 21, size = 20, stroke = 2) +
+  geom_text(color = 'black', size = 7, family = "Montserrat") +
+  scale_y_continuous(limits = seq(0, 520, by = 520)) +
+  #scale_x_discrete(expand = expansion(mult = c(0, 0))) +
+  labs(x = '', y = '', title = '') +
+  theme_classic() +
+  theme(axis.line.x = element_blank(),
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.line.y = element_line(size = 1),
+        title = element_text(size = 20, family = "Montserrat"),
+        axis.text.y = element_text(size = 20, family = "Montserrat", hjust = 0), 
+        plot.background = element_rect(fill = 'transparent', color = 'transparent'), 
+        panel.background = element_rect(fill = 'transparent', color = 'transparent')) +
+  coord_flip() + 
     ggsave('logo/gladwell.png',
            height = 4.5, width = 6, 
            bg = 'transparent')
 
-
 tribble(~Frequentist, ~Bayesian,
-        1200,  100) %>% 
+        1200,  150) %>% 
     pivot_longer(cols = everything(), names_to = 'language', values_to = 'hours') %>% 
     mutate(str_hours = if_else(str_length(hours) >= 4, 
                                str_c(str_sub(hours, end = 1L), 'K'), 
@@ -206,17 +208,15 @@ tribble(~Frequentist, ~Bayesian,
     geom_col(width = 0.06, color = 'black', fill = 'black') +
     geom_point(color = 'black', fill = '#cecece', shape = 21, size = 28, stroke = 2.75) + 
     geom_text(color = 'black', size = 10) +
-    geom_abline(aes(intercept = 230, slope = 5), size = 3, color = 'transparent') +
-    geom_abline(aes(intercept = 215, slope = 5), size = 3, color = 'transparent') +
     scale_y_continuous(limits = seq(0, 520, by = 520)) +
     labs(x = '', y = '', title = '') +
     theme_classic() +
     theme(axis.line.x = element_blank(), 
           axis.text.x = element_blank(), 
           axis.ticks.x = element_blank(), 
-          title = element_text(size = 20, family = 'Georgia'),
+          title = element_text(size = 20, family = 'Montserrat'),
           axis.line.y = element_line(size = 0.7), 
-          axis.text.y = element_text(size = 28.5, family = 'Georgia'),
+          axis.text.y = element_text(size = 28.5, family = 'Montserrat', hjust = 0),
           plot.background = element_rect(fill = 'transparent', color = 'transparent'), 
           panel.background = element_rect(fill = 'transparent', color = 'transparent')) +
     coord_flip() + 
@@ -226,6 +226,7 @@ tribble(~Frequentist, ~Bayesian,
 # Logo ====
 # Collapses the two letters into one image and saves it
 #gridExtra::grid.arrange(letter_c, letter_h, nrow = 1)
-ggsave('logo/ch.png', gridExtra::grid.arrange(letter_c, letter_h, nrow = 1),
+cd <- gridExtra::grid.arrange(letter_c, letter_h, nrow = 1)
+ggsave('logo/ch.png', ,
        height = 4.5, width = 6, 
        bg = 'transparent' )

@@ -39,15 +39,17 @@ sr_ds <- tibble(
     desc = list(
         tibble(
             description = c(
-                "- Development and deployment of a supervised model for classifying tax debt",
-                "- Designed and taught three courses for the institution's staff training: introduction to R, basics of exploratory data analysis, building data science pipelines using Makefiles",
-                "- Designed a pipeline for automatic generation of frequent data visualization reports",
-                "- Perform network analysis to detect tax evasion communities"
+                "- Development of a **supervised model** for identification of tax evasion schemes using **cloud architecture**",
+                "- Development and orchestration of a **bayesian model** for prediction of aggregate employment using tax receipts on **cloud architecture**",
+                "- Development and deployment of a **supervised model** for classifying tax debt",
+                "- Designed and taught three courses for the institution's **staff training**: intro to R, basics of EDA, building DS pipelines with Make",
+                "- Designed a **pipeline for automatic** generation of frequent data visualization **reports**"
             ), 
             skills = c(
-                "R (tidyverse, ranger), Python (scikit-learn, pandas), SQL",
+                "Spark (pySpark, koalas, SQL), python (scikit, pandas)",
+                "R (tidyverse, STAN), Python (scikit-learn, pandas), Spark (SQL)",
                 "R (tidyverse, ggplot2), GNU Make",
-                "R Markdown (ggplot2, shiny)",
+                "Rmarkdown (xaringan for slides)",
                 "R (tidyverse, visnetwork, ggraph)"
             )
         )
@@ -64,12 +66,10 @@ jr_ds <-  tibble(
     desc = list(
         tibble(
             description = c(
-                "- Developed a statistical model for identifying anti-competitive practices between the mid-stream natural gas providers",
-                "- Built a PDF scrapping pipeline of 100+ files for ownership analysis of Mexico's natural gas industry."
+                "- Developed a **statistical** model for identifying anti-competitive practices between the mid-stream natural gas providers"
             ), 
             skills = c(
-                "R",
-                "R (stringr, selenium)"
+                "base R"
             )
         )
     )
