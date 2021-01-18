@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Baskervville|Montserrat&display=swap');
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css");
 @import url("https://fonts.googleapis.com/css?family=IM+Fell+Great+Primer:400i&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500&family=Lato&display=swap');
 
  
 /* 
@@ -14,7 +14,7 @@ https://github.com/nstrayer/cv/tree/master/css
 
 /* Main text is Montserrat */
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Inconsolata', monospace;
 }
 
 p {
@@ -24,16 +24,16 @@ p {
     margin-inline-start: 0px;
     margin-inline-end: 20px; 
     text-align: justify;
-    font-size: 0.72rem;
+    font-size: 0.9rem;/*0.72rem; */
 }
 
 
 [data-id="title"] h3 {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 /* Headers are Baskervville */
 h1, h2, h3 {
-  font-family: 'Baskervville', serif;
+  font-family:  'Baskervville', sans-serif;
   /*color: #000;*/
 } 
 
@@ -91,10 +91,10 @@ a {
 .aside {
     /*width: var(--sidebar-width);
     padding: 0.6in var(--sidebar-horizontal-padding);
-    font-size: 0.8rem;
     float: right;
     position: absolute;
     right: 0px;*/
+    font-size: 1.1rem;
     top: -100px;
 }
 

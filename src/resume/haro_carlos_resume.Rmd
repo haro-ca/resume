@@ -21,127 +21,50 @@ library(tidyverse)
 source(here::here('src', 'resume', 'print_functions.R'))
 ```
 
-
-Aside
-================================================================================
+# Aside
 
 ```{r Logo}
 knitr::include_graphics(here::here('logo', 'ch.png'))
 ```
 
+## Contact Info {#contact}
 
+-   <i class="fa fa-envelope"></i> [haro\_ca\@outlook.com](mailto:haro_ca@outlook.com){.email}
+-   <i class="fa fa-twitter"></i> \@[haro\_ca\_](https://twitter.com/haro_ca_)
+-   <i class="fa fa-github"></i> [haro-ca](https://github.com/haro-ca)
+-   <i class="fa fa-phone"></i> (+52) 55-49-85-53-34
 
-Contact Info {#contact}
---------------------------------------------------------------------------------
+## Skills {#skills}
 
-- <i class="fa fa-envelope"></i> haro_ca@outlook.com
-- <i class="fa fa-twitter"></i> @[haro_ca_](https://twitter.com/haro_ca_)
-- <i class="fa fa-github"></i> [haro-ca](https://github.com/haro-ca)
-- <i class="fa fa-phone"></i> (+52) 55-49-85-53-34
+[*Outliers*](https://en.wikipedia.org/wiki/Outliers_(book)), a book by [Malcolm Gladwell](https://en.wikipedia.org/wiki/Malcolm_Gladwell), states that mastery over a skill can only be achieved by 10,000 hours of productive work. While there is both evidence in favor and against this theory, I do find it a good proxy for maturity of a skillset. The charts below attempt to summarize my current progress.<br>
 
-Skills {#skills}
---------------------------------------------------------------------------------
-[*Outliers*](https://en.wikipedia.org/wiki/Outliers_(book)),
-a book by [Malcolm Gladwell](https://en.wikipedia.org/wiki/Malcolm_Gladwell), states that 
-mastery over a skill can only be achieved by 10,000 hours of productive work.
-While there is both evidence in favor and against this theory, I do find it a good proxy for
-maturity of a skillset. The charts below attempt to summarize my current progress.<br>
-
-**Programming**<br><br>
-```{r, echo=FALSE} 
-library(tidyverse)
-library(extrafont)
-tribble(~R, ~Python, ~SQL, ~Makefiles, ~Docker, ~Cloud, 
-         3000,  300, 250, 100, 60, 150) %>% 
-  pivot_longer(cols = everything(), names_to = 'language', values_to = 'hours') %>% 
-  mutate(str_hours = if_else(str_length(hours) >= 4, 
-                             str_c(str_sub(hours, end = 1L), 'K'), 
-                             as.character(hours))) %>% 
-  arrange(hours) %>% 
-  mutate(hours = if_else(language == 'R', 500, hours),
-         language = forcats::fct_inorder(language)) %>% 
-  ggplot() +
-  aes(x = language, y = hours, label = str_hours) +
-  geom_col(width = 0.04, color = 'black', fill = 'black') +
-  geom_point(color = 'black', fill = '#cecece', shape = 21, size = 20, stroke = 2) + 
-  geom_text(color = 'black', size = 7) +
-  geom_abline(aes(intercept = 380, slope = 5), size = 3, color = '#cecece') +
-  geom_abline(aes(intercept = 400, slope = 5), size = 3, color = '#cecece') +
-  scale_y_continuous(limits = seq(0, 520, by = 520)) +
-  #scale_x_discrete(expand = expansion(mult = c(0, 0))) +
-  labs(x = '', y = '', title = 'Hours of productive work') +
-  theme_classic() +
-  theme(axis.line.x = element_blank(), 
-        axis.text.x = element_blank(), 
-        axis.ticks.x = element_blank(), 
-        title = element_text(size = 20, family = 'Georgia'),
-        axis.text.y = element_text(size = 20, family = 'Georgia'),
-        plot.background = element_rect(fill = '#cecece', color = '#cecece'), 
-        panel.background = element_rect(fill = '#cecece', color = '#cecece')) +
-  coord_flip()
+**Programming**<br>
+```{r}
+knitr::include_graphics(here::here('logo', 'gladwell.png'))
 ```
 
-
 **Statistics**<br>
-```{r, echo=FALSE, fig.width=10, fig.height=3} 
-library(tidyverse)
-library(extrafont)
-tribble(~Frequentist, ~Bayesian,
-         1200,  100) %>% 
-  pivot_longer(cols = everything(), names_to = 'language', values_to = 'hours') %>% 
-  mutate(str_hours = if_else(str_length(hours) >= 4, 
-                             str_c(str_sub(hours, end = 1L), 'K'), 
-                             as.character(hours))) %>% 
-  arrange(hours) %>% 
-  mutate(hours = if_else(language == 'Frequentist', 300, hours),
-         language = forcats::fct_inorder(language)) %>% 
-  ggplot() +
-  aes(x = language, y = hours, label = str_hours) +
-  geom_col(width = 0.06, color = 'black', fill = 'black') +
-  geom_point(color = 'black', fill = '#cecece', shape = 21, size = 28, stroke = 2.75) + 
-  geom_text(color = 'black', size = 10) +
-  geom_abline(aes(intercept = 230, slope = 5), size = 3, color = '#cecece') +
-  geom_abline(aes(intercept = 215, slope = 5), size = 3, color = '#cecece') +
-  scale_y_continuous(limits = seq(0, 520, by = 520)) +
-  labs(x = '', y = '', title = '') +
-  theme_classic() +
-  theme(axis.line.x = element_blank(), 
-       axis.text.x = element_blank(), 
-        axis.ticks.x = element_blank(), 
-        title = element_text(size = 20, family = 'Georgia'),
-        axis.line.y = element_line(size = 0.7), 
-        axis.text.y = element_text(size = 28.5, family = 'Georgia'),
-        plot.background = element_rect(fill = '#cecece', color = '#cecece'), 
-        panel.background = element_rect(fill = '#cecece', color = '#cecece')) +
-  coord_flip()
+```{r}
+knitr::include_graphics(here::here('logo', 'gladwell_statistics.png'))
 ```
 
 Main experience with frequentist methods, but with high interest to develop in bayesian's.
 
-**Miscellaneus**<br>
-Vim enthusiast, in the Terminal, in VS Code, in RStudio, in Chrome (with Vimium), even in the whole OS (with Karabiner)!  
+**Miscellaneus**<br> Vim enthusiast, in the Terminal, in VS Code, in RStudio, in Chrome (with Vimium), even in the whole OS (with Karabiner)!\
 Chess fanatic [(chess.com profile)](https://www.chess.com/member/mendel17)
 
-
-Disclaimer {#disclaimer}
---------------------------------------------------------------------------------
+## Disclaimer {#disclaimer}
 
 This resume was made with the R package [**pagedown**](https://github.com/rstudio/pagedown).
 
 Last updated on `r Sys.Date()`.
 
+# Main
 
+## Carlos A. Haro {#title}
 
-Main
-================================================================================
-
-Carlos A. Haro {#title}
---------------------------------------------------------------------------------
-
-### Data scientist with experience in scalable data products.<br><br>Currently searching for a Mid-Level Data Science position, but with interest in a Jr. ML Engineering role.
-
-Experience {data-icon=laptop-code} 
---------------------------------------------------------------------------------
+### Data scientist with experience in scalable data products.<br><br>
+## Experience {data-icon="laptop"}
 
 ```{r Experience}
 positions_frame <- read_tsv(here::here('positions_data', 'experience.csv'), 
@@ -150,16 +73,15 @@ print_position(positions_frame, 'Sr. Data Scientist')
 print_position(positions_frame, 'Jr. Data Scientist | Economic Analyst')
 ```
 
-Miscellaneous {data-icon=file}
---------------------------------------------------------------------------------
+## Miscellaneous {data-icon="file"}
+
 ### Podcast host
 
-Currently a host in "Cuestion de datos", a weekly data related podcast. [(Spotify link)](https://open.spotify.com/show/3zmhwFMBgjmBStwwk4V7TY?si=kj69DOc0S9ii_Haxfba3QQ)
+Cofounder and host in "Cuestion de datos", a data related podcast. [(Spotify link)](https://open.spotify.com/show/3zmhwFMBgjmBStwwk4V7TY?si=kj69DOc0S9ii_Haxfba3QQ)
 
 N/A
 
 2020
-
 
 ### Teaching
 
@@ -169,28 +91,26 @@ N/A
 
 2020
 
-**Objective**: To teach political science, management, and economics students about modern computational 
-techniques for data analysis.  
-**Syllabus**: [(Download link)](https://github.com/haro-ca/herramientas_de_analisis_de_datos/raw/master/00_temario/temario.pdf)  
-**Software**: R, Python, PostgreSQL  
-**Institution**: ITAM [(webpage)](https://www.itam.mx/)  
-**Language**: Spanish  
+**Objective**: To teach political science, management, and economics students about modern computational techniques for data analysis.\
+**Syllabus**: [(Download link)](https://github.com/haro-ca/herramientas_de_analisis_de_datos/raw/master/00_temario/temario.pdf)\
+**Software**: R, Python, PostgreSQL\
+**Institution**: ITAM [(webpage)](https://www.itam.mx/)\
+**Language**: Spanish\
 **Amid COVID course videos**: [(YouTube link)](https://www.youtube.com/channel/UClMCc-ACtQ9gJ5BRlHZkTKQ)
 
 ### Hackaton challenge winner
 
-Annual BBVA Hackaton Challenge 
+Annual BBVA Hackaton Challenge
 
 N/A
 
 2019
 
-**Organizer**: BBVA Bank  
-**Challenge**: Update and insert operation of a 50 million observations dataset in under 10 minutes.  
-**Result**: 95%+ accuracy of update and insert achieved in 4 minutes | *Pyspark on AWS for the algorithm, RMarkdown for the report*  
+**Organizer**: BBVA Bank\
+**Challenge**: Update and insert operation of a 50 million observations dataset in under 10 minutes.\
+**Result**: 95%+ accuracy of update and insert achieved in 4 minutes \| *Pyspark on AWS for the algorithm, RMarkdown for the report*
 
-Education {data-icon=graduation-cap data-concise=true}
---------------------------------------------------------------------------------
+## Education {data-icon="graduation-cap" data-concise="true"}
 
 ### (ITAM) Instituto Tecnológico Autónomo de México
 
@@ -199,6 +119,3 @@ B.S., Economics
 Mexico City, Mexico
 
 2014 - 2018
-
- 
-
